@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 date: 2018-06-09T16:01:28-04:00
-draft: true
+draft: false
 ---
 
 # Heading 1
