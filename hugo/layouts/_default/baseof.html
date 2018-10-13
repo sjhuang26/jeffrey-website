@@ -1,7 +1,22 @@
 <!DOCTYPE html>
-<html class="html-document">
-	<body class="html-document__body">
-		{{ block "main" . }}
-		{{ end }}
-	</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Suhao Jeffrey Huang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/main.css">
+  </head>
+  <body class="site">
+    <div class="navigation">
+      <span class="navigation__title">Suhao Jeffrey Huang</span>
+      <a class="navigation__link" href="{{ .Site.BaseURL }}">Home</a>
+      <a class="navigation__link" href="{{ .Site.BaseURL }}/page/about">About</a>
+      <a class="navigation__link" href="{{ .Site.BaseURL }}/post">Posts</a>
+      <a class="navigation__link" href="{{ .Site.BaseURL }}/project">Projects</a>
+    </div>
+    <div class="site-body">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+  </body>
 </html>

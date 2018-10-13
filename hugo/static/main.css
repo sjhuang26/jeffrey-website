@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.site {
+	font-family: 'Roboto', sans-serif;
+}
+
+.navigation {
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	background-color: #EEE;
+	padding: 0 1rem;
+}
+.navigation__title {
+	font-weight: bold;
+}
+.navigation__link {
+	text-decoration: none;
+	color: black;
+	padding: 0.5rem 0.5rem;
+	display: inline-block;
+	transition: padding 0.3s;
+}
+.navigation__link:hover {
+	padding: 0.5rem 0.75rem;
+	font-weight: bold;
+}
+
+.site-body {
+	padding: 0.5rem 1rem;
+}
+
+.subtitle {
+	font-weight: bold;
+}
