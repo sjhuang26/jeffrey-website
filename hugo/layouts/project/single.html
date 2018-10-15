@@ -1,5 +1,12 @@
 {{ define "main" }}
 	<h1>{{ .Title }}</h1>
-	<a href="{{ .Params.Link }}">Link</a>
+	<a class="button button--primary" href="{{ .Params.Link }}">Link</a>
+	<div class="metadata">
+		{{ range $key, $val := .Params }}
+			<span class="metadata__entry">
+				<span class="metadata__entry-key">{{ $key }}</span>
+				{{ $val }}</span>
+		{{ end }}
+	</div>
 	{{ .Content }}
 {{ end }}

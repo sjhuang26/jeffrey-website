@@ -33,3 +33,31 @@
 .subtitle {
 	font-weight: bold;
 }
+
+.metadata {
+	outline: 1px solid black;
+	padding: 1rem;
+}
+
+.button {
+	text-decoration: none;
+	color: black;
+	font-size: 1.5rem;
+	background-color: #EEE;
+	padding: 0.5rem 1.5rem;
+	display: inline-block;
+	margin: 1rem 0;
+}
+.button--primary {
+	background-color: orange;
+}
+
+.metadata__entry {
+	background-color: #EEE;
+	padding: 0.5rem;
+	margin: 0.5rem 1rem;
+	display: inline-block;
+}
+.metadata__entry-key {
+	font-weight: bold;
+}
