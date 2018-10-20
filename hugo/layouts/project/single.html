@@ -1,12 +1,22 @@
 {{ define "main" }}
-	<h1>{{ .Title }}</h1>
-	<a class="button button--primary" href="{{ .Params.Link }}">Link</a>
-	<div class="metadata">
-		{{ range $key, $val := .Params }}
-			<span class="metadata__entry">
-				<span class="metadata__entry-key">{{ $key }}</span>
-				{{ $val }}</span>
-		{{ end }}
+	<div class="single-page">
+		<h1 class="title">{{ .Title }}</h1>
+		<p class="single-page__subtitle">{{ .Params.description }}</p>
+		<div class="pills">
+			<a class="pill" href="{{ .Params.link }}">Link</a>
+			<span class="pill">{{ .Params.status }}</span>
+		</div>
+		<div class="metadata">
+			<div class="metadata__entry">
+				<span class="metadata__entry-key">Learned: </span>{{ .Params.learned }}
+			</div>
+			<div class="metadata__entry">
+				<span class="metadata__entry-key">Timeframe: </span>{{ .Params.timeframe }}
+			</div>
+			<div class="metadata__entry">
+				<span class="metadata__entry-key">Team: </span>{{ .Params.team }}
+			</div>
+		</div>
+		{{ .Content }}
 	</div>
-	{{ .Content }}
 {{ end }}

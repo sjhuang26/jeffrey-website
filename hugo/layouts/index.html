@@ -1,9 +1,6 @@
 {{ define "main" }}
-  {{ .Content }}
-  <h1>Posts</h1>
-  {{ range first 10 (where .Pages "Section" "post") }}
-    <h2>{{ .Title }}</h2>
-    <span class="subtitle">{{ .Date.Format "01/02/2006" }}</span>
+  <div class="single-page">
+    <h1 class="title">Welcome!</h1>
     {{ .Content }}
-  {{ end }}
+  </div>
 {{ end }}

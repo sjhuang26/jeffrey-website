@@ -2,11 +2,9 @@
 title: Codotype
 link: https://github.com/codotype
 timeframe: 10th grade
-organization: RCOS
-team: me and someone else
-completion: ongoing
-description: developer tool for generating boilerplate code
-contribution: wrote 1 module out of 3
+team: me and someone else at RCOS (wrote 1 code-generation module out of about 3)
+status: ongoing
+description: A developer tool for generating boilerplate code.
 learned: React, best practices for project structure
 ---
 Codotype is a developer tool for generating frontend and backend boilerplate code. The project is still ongoing.

@@ -1,5 +1,7 @@
 {{ define "main" }}
-	<h1>{{ .Title }}</h1>
-	<span class="subtitle">{{ .Date.Format "01/02/2006" }}</span>
-	{{ .Content }}
+	<div class="single-page">
+		<h1 class="title">{{ .Title }}</h1>
+		<p class="single-page__subtitle">{{ .Date.Format "01/02/2006" }}</p>
+		{{ .Content }}
+	</div>
 {{ end }}

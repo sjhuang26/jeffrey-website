@@ -1,6 +1,14 @@
 {{ define "main" }}
-	<h1>Posts</h1>
-	{{ range .Pages }}
-		<a href="{{ .Permalink }}">{{ .Title }}</a> {{.Date.Format "01/02/2006"}}
-	{{ end }}
+	<div class="list-page">
+		<h1 class="title">Posts</h1>
+		<div class="card-list">
+			{{ range .Pages }}
+				<a href="{{ .Permalink }}" class="card card-list__card">
+					<div class="card__body">
+						<div class="card__title">{{ .Title }} <span class="card__title-meta">{{ .Date.Format "01/02/2006" }}</span></div>
+					</div>
+				</a>
+			{{ end }}
+		</div>
+	</div>
 {{ end }}

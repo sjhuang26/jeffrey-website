@@ -3,9 +3,9 @@ title: Math Trainer
 link: https://mathtrainer.netlify.com/
 source code: https://github.com/sjhuang26/math-trainer
 timeframe: 7th grade
-completion: production ready
-description: browse math problems which are loaded from a wiki
-contribution: wrote by myself
+team: myself
+status: production ready
+description: Browse math problems which are loaded from a wiki.
 learned: Vue, sanitizing data, lots of best practices when writing applications
 ---
 Math Trainer allows users to browse math problems which are loaded from the Art of Problem Solving wiki. This was one of my first big web apps.
