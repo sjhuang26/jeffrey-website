@@ -1,6 +1,6 @@
 ---
 title: Codotype
-link: https://github.com/codotype
+link: https://codotype.io
 timeframe: 10th grade
 team: me and someone else at RCOS (wrote 1 code-generation module out of about 3)
 status: ongoing

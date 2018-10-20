@@ -6,6 +6,7 @@
 			<a class="pill" href="{{ .Params.link }}">Link</a>
 			<span class="pill">{{ .Params.status }}</span>
 		</div>
+		{{ .Content }}
 		<div class="metadata">
 			<div class="metadata__entry">
 				<span class="metadata__entry-key">Learned: </span>{{ .Params.learned }}
@@ -17,6 +18,5 @@
 				<span class="metadata__entry-key">Team: </span>{{ .Params.team }}
 			</div>
 		</div>
-		{{ .Content }}
 	</div>
 {{ end }}
