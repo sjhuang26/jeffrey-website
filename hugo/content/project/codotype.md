@@ -2,11 +2,12 @@
 title: Codotype
 link: https://codotype.io
 timeframe: 10th grade
-team: me and someone else at RCOS (wrote 1 code-generation module out of about 3)
-status: ongoing
-description: A developer tool for generating boilerplate code.
-learned: React, best practices for project structure
+team: me and someone else
+status: not-ongoing
+description: automatic template-code writing
 ---
-Codotype is a developer tool for generating frontend and backend boilerplate code. The project is still ongoing.
+Codotype automates the writing of "template code" in various programming frameworks. I focused on writing the module for React, while my teammates focused on other frameworks such as Vue.
 
-Currently I have written the module that generates React code; in the process, I learned how to use React. Furthermore, as my team member has several years of job experience, he showed me many best practices for structuring and organizing apps that I had not seen before.
+This was my first exposure to React, and I learned how it works, proper project structure, and best practices. I worked with someone much older than I was, who taught me many coding tactics that I had never seen before.
+
+In addition, I learned about the various applications of templating languages like EJS.

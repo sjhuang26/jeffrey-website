@@ -1,14 +1,11 @@
 ---
 title: CFS
+description: A room-booking tool that didn't get very far
 link: https://github.com/olivierpo/cfs
 timeframe: summer between 9-10th grade
-team: around four people at RCOS (wrote about 70% of frontend code)
-status: incomplete
-description: A web app that allows college faculty to book rooms.
-learned: Vue, Vuex
+team: a few people
+status: not-ongoing
 ---
-CFS was a web app that allowed college faculty to book rooms in the campus. The previous software for doing this had a difficult user interface and workflow. The project was never completed as the project owner moved on to other ideas.
+CFS was intended to be a room-booking tool for college faculty, but it never got very far. So this was mainly a learning experience.
 
-I wrote the majority (70%) of the frontend code. In its current state, the website can take raw schedule data and create an interactive schedule browser.
-
-This project refined my skills with the Vue frontend framework. Learning Vuex and writing a dynamic schedule display that combined dynamically generated CSS styles and JS data processing was challenging and fun.
+Overall, this project extended my knowledge in Vue-related libraries such as Vuex. This was my first team project with this particular framework, so in addition to learning Vuex, I had to think about how I should organize the various code modules involved and divide up the work with others.
