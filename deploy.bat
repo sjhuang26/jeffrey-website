@@ -1,4 +1,2 @@
-cd hugo
-hugo
-cd ..
-netlify deploy
+cd hugo && hugo && cd ..
+netlify deploy --prod
