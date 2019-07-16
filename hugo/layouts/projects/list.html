@@ -3,7 +3,7 @@
 		<h1 class="title">Projects</h1>
 		<div class="card-list">
 			{{ range .Pages }}
-				<a href="{{ .Permalink }}" class="card card-list__card">
+				<a href="{{ .Permalink }}" class="card card--clickable card-list__card">
 					<div class="card__body">
 						<div class="card__title">{{ .Title }}</div>
 						<p class="card__description">{{ .Description }}</p>

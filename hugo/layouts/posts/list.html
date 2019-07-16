@@ -3,7 +3,7 @@
 		<h1 class="title">Posts</h1>
 		<div class="card-list">
 			{{ range .Pages }}
-				<a href="{{ .Permalink }}" class="card card-list__card">
+				<a href="{{ .Permalink }}" class="card card--clickable card-list__card">
 					<div class="card__body">
 						<div class="card__title">{{ .Title }} <span class="card__title-meta">{{ .Date.Format "01/02/2006" }}</span></div>
 					</div>

@@ -1,0 +1,21 @@
+{{ define "main" }}
+	<div class="single-page">
+		<h1 class="title">{{ .Title }}</h1>
+		<p class="single-page__subtitle">{{ .Params.description }}</p>
+		<div class="pills">
+			{{ with .Params.link }}<a class="pill" href="{{ . }}">Link</a>{{ end }}
+			{{ with .Params.code_link }}<a class="pill" href="{{ . }}">Link (source code)</a>{{ end }}
+			{{ with .Params.employer_link }}<a class="pill" href="{{ . }}">Link to employer</a>{{ end }}
+			<span class="pill">{{ .Params.status }}</span>
+			<span class="pill">Timeframe: {{ .Params.timeframe }}</span>
+			<span class="pill">Team: {{ .Params.team }}</span>
+		</div>
+		{{ .Content }}
+	</div>
+{{ end }}
+
+{{ define "footer" }}
+<div class="navigation">
+    <a class="navigation__link" href="{{ .Site.BaseURL }}/projects">Back to projects page</a>
+</div>
+{{ end }}

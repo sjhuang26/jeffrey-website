@@ -10,12 +10,14 @@
     <div class="navigation">
       <span class="navigation__title">Suhao Jeffrey Huang</span>
       <a class="navigation__link" href="{{ .Site.BaseURL }}/">Home</a>
-      <a class="navigation__link" href="{{ .Site.BaseURL }}/post">Posts</a>
-      <a class="navigation__link" href="{{ .Site.BaseURL }}/project">Projects</a>
+      <a class="navigation__link" href="{{ .Site.BaseURL }}/posts">Posts</a>
+      <a class="navigation__link" href="{{ .Site.BaseURL }}/projects">Projects</a>
     </div>
     <div class="site-body">
       {{ block "main" . }}
       {{ end }}
     </div>
+    {{ block "footer" . }}
+    {{ end }}
   </body>
 </html>
