@@ -2,7 +2,7 @@ languageCode = "en-us"
 title = "My New Hugo Site"
 enableRobotsTXT = true
 copyright = "Suhao Jeffrey Huang"
-baseURL = "https://jeffrey.netlify.com"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 [sitemap]
     changefreq = "weekly"
     priority = 0.5
