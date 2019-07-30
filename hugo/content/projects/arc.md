@@ -9,83 +9,122 @@ team: myself
 status: ongoing
 ---
 {{% slide %}}
-The ARC is a peer-to-peer tutoring program at my high school. I wrote an web application that automates and manages its tutor-scheduling and attendance tracking processes.
-Manual work that previously required 2-3 student volunteers is for the most part automated by the application.
-{{% /slide %}}
-{{% slide %}}
 ### Background
-Upon joining the ARC in tenth grade as "tech director", I noticed that the vast majority of the scheduling of tutors was done by hand. My first solution was a spreadsheet that uses spreadsheet formulas to create a registry of tutors available for each time slot. Multiple issues soon came up:
 
-* Coverage of only a small part of the scheduling process, with most of the scheduling still done by hand
-* Very little resilience to user error
+The ARC is a peer-to-peer tutoring program at my high school.
 
-An example of a cryptic error message in the old spreadsheet:
+Upon joining the ARC in tenth grade as "tech director", I saw opportunities to automate the work of managing 100+ student tutors. Each tutor needs to be scheduled with a student, and their attendance needs to be tracked. While there was some computerization of these processes, most of this was done by hand using a paperwork system.
 
-![Example of user error in the old application](/s/arc/user-error-old.png)
+**Application:** a website that automates and manages the ARC's tutor-scheduling and attendance tracking processes.
+
+**Benefits:** the work of managing 100+ tutors that previously required 2-3 student volunteers is for the most part automated. Furthermore, the new application combines all student data into a single spreadsheet, avoiding duplicate contact entries, missing students, and other sync issues which were problematic in the previous system.
 {{% /slide %}}
-{{% slide %}}
-Because of these issues, I eventually decided to write an improved application with more functionality.
 
-Here is the architecture:
+
+
+{{% slide %}}
+### Architecture and design
 
 ![Diagram of application architecture](/s/arc/architecture.svg)
 
-I used Typescript as the programming language.
-{{% /slide %}}
-{{% slide %}}
-When designing the data model, I analyzed the existing school tutoring system and modeling it as a series of objects, data structures, terminologies ("bookings ... matchings ... requests"), and statuses ("finalized ... unbooked ... unfinalized").
+Typescript was used as the programming language.
 
-Designing the app involved multiple conversations with school administrators to decide on the final feature set.
+The top layer of the pyramid (website) provides the core user interface, while the bottom layer (spreadsheets) store the raw data.
+
+The middle layer (Google Apps Script) is a scripting language that runs directly on the spreadsheet.
+
+**Maintainability:** Using spreadsheets (Google Sheets) as opposed to a conventional database increases maintainability and reduces the risk of accidental data deletion. Furthermore, it is important for non-technical users to be able to access the raw data and edit it directly. While normally I would use a database, spreadsheets turn out to be more convenient.
+
+**Error handling:** There is a communication bridge between the spreadsheet and the website that the user interacts with. If a spreadsheet operation fails, users will be notified, so that they can try again. This is an improvement over the old spreadsheets, where "silent failure" frequently occurred and students would disappear from the schedule without warning.
 {{% /slide %}}
+
+
+
 {{% slide %}}
-Within the app, when a learner submits a request for a tutor, the following process is triggered:
+### Design of data model
+I analyzed the existing school tutoring system and modeled it as a series of objects, data structures, terminologies ("bookings ... matchings ... requests"), and statuses ("finalized ... unbooked ... unfinalized").
+
+**Benefits:** Training and transitioning to the new system is made easier by clear analogies from pieces of old system paperwork to new system data entities. The design is such that each piece of data is present in only one location, avoiding data duplication issues and data inconsistencies that were problematic in the old system.
+{{% /slide %}}
+
+
+
+{{% slide %}}
+### When a learner submits a request for a tutor...
+
+One of the important processes the application implements is tutor-to-learner scheduling. The process begins when a learner submits a request for a tutor. The app keeps track of the necessary data and uses status trackers so the user can mark when each step is completed.
 
 ![Process when a learner submits a tutor request](/s/arc/request-process.svg)
-
-The app keeps track of things by entering data in the spreadsheet and by using status trackers/flags.
 {{% /slide %}}
+
+
+
 {{% slide %}}
+### Design of user interface
+
+* The UI consists of windows; each operation or step gets its own window. Multiple windows can be opened at once, which is advantageous for multitasking.
+* The scheduling workflow consists of three steps, one window for each step.
+* A hyperlink system allows the user to jump from overview to detail view, click on a student to see detailed info about him/her, etc. 
+
+![UI window overview](/s/arc/ui-window.svg)
+
+**Main benefits:** The simple three-step scheduling workflow is easy to learn and keeps the scheduling process linear and organized. The hyperlink system gives the user quick access to information when it is needed, such as when contacting a student.
+{{% /slide %}}
+
+
+
+{{% slide %}}
+### Tutor information UI
 The user can see an overview of all tutors. New tutors' information can also be added. A similar UI exists for editing learners, requests, bookings, matchings, etc.
 
 ![Overview of all tutors](/s/arc/tutor-view-all.png)
 
-Clicking a tutor opens a new window where their information can be edited in a standard CRUD interface.
+Clicking a tutor opens a new window where their information can be edited in a standard CRUD interface. The changes made in the website are propagated to the spreadsheet.
 
 ![Detail view for a tutor](/s/arc/tutor-edit.png)
 {{% /slide %}}
+
+
+
 {{% slide %}}
-The UI consists of windows, which allow the user to view/edit information, work on a step of the tutor scheduling process, etc. Multiple windows can be opened at once.
-
-The scheduling workflow consists of three steps. Each step opens a separate window.
-
-
-![UI window overview](/s/arc/ui-window.svg)
-{{% /slide %}}
-{{% slide %}}
+### Attendance tracking UI
 The attendance tracker is a simple table of all students with an expandable detail view.
 
 ![Attendance tracker](/s/arc/attendance.svg)
+
+**Main benefits:** One page has an overview of all the important attendance info. This makes it easy to spot students with low attendance levels.
+
 {{% /slide %}}
+
+
+
 {{% slide %}}
-### Example of data processing: attendance
+### Managing the data
 
-The flow of data looks like this. Data is processed ahead of time so it doesn't need to be recalculated every time attendance info is retrieved.
+* Bookings and tutor-learner matchings are automatically created and managed as part of the scheduling workflow.
+* Every year, new tutors and learners sign up via. electronic form, and their info is added in bulk to the data spreadsheet.
 
-1. Students submit attendance data via. a form, which is linked to a spreadsheet.
-2. The data is processed into an intermediate format.
-3. Later, the intermediate format is reprocessed and integrated into the rest of the spreadsheet ("final format").
-4. The final format is directly used in the attendance displays.
+The above two processes handle most of the data. The exception is attendance data, since the attendance log is filled with hundreds of entries a day and is processed in daily chunks. Attendance data is processed like this:
+
+1. Each tutor and learner submits their attendance data via. a form.
+2. The form data goes into a spreadsheet.
+3. The data is processed into an intermediate format.
+4. Later, the intermediate format is reprocessed and integrated into the rest of the spreadsheet ("final format"). This data goes directly to the attendance displays.
 
 ![Attendance data processing](/s/arc/attendance-processing.svg)
 
-(A similar pattern is used to handle form submissions for tutor requests.)
+Data is processed ahead of time so it doesn't need to be recalculated every time attendance info is retrieved.
 
-This two-stage data processing pattern has advantages:
+**Why four steps?** The key complicating factor is that the final format needs to be compressed and optimized to make the app loads faster. While the compression could be done in a single step directly on the form data, this makes mistakes much more difficult to see. Multiple steps make the process more robust and reproducible.
 
-1. information isn't dropped when the spreadsheet or form data is changed and recalculated
-2. the internals of the data processing are more transparent and easier to correct
-3. strong backward compatibility if the form changes
+**Important advantages of the four-step system:**
+
+1. The internals of the data processing are more transparent and easier to correct. In particular, mistakes can be quickly undone.
+2. There is strong backward compatibility if the form changes, because each step is separated.
 {{% /slide %}}
+
+
+
 {{% learnings %}}
 * I learned Typescript.
 * I learned large portions of Google Apps Script, which will hopefully be helpful in future projects.
