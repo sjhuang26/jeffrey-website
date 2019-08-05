@@ -4,7 +4,8 @@ link: https://positive-quotes.netlify.com/
 timeframe: 10th grade
 team: myself
 status: not-ongoing
-description: starter page for school laptops
+description: A starter page for school laptops.
+featured: false
 ---
 {{% slide %}}
 This is a starter page (homepage) I made for a portion of the laptops at my high school.

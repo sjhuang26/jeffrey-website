@@ -4,7 +4,8 @@ employer_link: https://www.correlation-one.com/
 timeframe: 10th grade
 team: N/A
 status: ongoing
-description: contractor with Correlation One, as a writer of SE problems
+description: contractor with Correlation One, as a writer of SE problems that test programming concepts in situations mimicking real-life software development. Code comprehension and modeling possible outcomes of the code are emphasized.
+featured: false
 ---
 {{% slide %}}
 As of right now, I work as a contractor with Correlation One. My main responsibility is to write software engineering problems.

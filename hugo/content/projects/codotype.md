@@ -5,7 +5,8 @@ code_link: https://github.com/codotype/codotype
 timeframe: 10th grade
 team: me and someone else
 status: not-ongoing
-description: automatic template-code writing
+description: Automatic "template code" generation that allows users to quickly skeleton out the basic code structure of data-manipulation ("CRUD") apps
+featured: false
 ---
 {{% slide %}}
 ### Problem

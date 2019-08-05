@@ -5,7 +5,8 @@ code_link: https://github.com/YACS-RCOS/yacs
 timeframe: 9th & 10th grade summer
 team: a very large team
 status: ongoing
-description: The main scheduling tool of RPI (local university)
+description: Small contributions to the official RPI course-scheduling tool (local university)
+featured: false
 ---
 
 {{% slide %}}

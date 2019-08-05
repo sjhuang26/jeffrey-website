@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="/main.css">
   </head>
   <body class="site">
-    <div class="bar bar--top">
-      <span class="bar__title">Suhao Jeffrey Huang</span>
-      <a class="bar__link" href="/">Home</a>
-      <a class="bar__link" href="/posts">Posts</a>
-      <a class="bar__link" href="/projects">Projects</a>
-    </div>
+    {{ block "nav" . }}
+      <div class="bar bar--top">
+        <span class="bar__title">Suhao Jeffrey Huang</span>
+        <a class="bar__link" href="/">Home</a>
+        <a class="bar__link" href="/posts">Posts</a>
+        <a class="bar__link" href="/projects">Projects</a>
+      </div>
+    {{ end }}
     <div class="site-body">
       {{ block "main" . }}
       {{ end }}

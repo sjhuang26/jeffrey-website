@@ -5,6 +5,7 @@ timeframe: 9th grade
 team: 3 programmers and 12 others
 status: not-ongoing
 description: programming a robot remote control system for the school's robotics club
+featured: false
 ---
 {{% slide %}}
 In Robotics Club, I programmed a relatively advanced robot driving remote control system with a team.

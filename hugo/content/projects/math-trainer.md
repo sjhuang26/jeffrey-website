@@ -6,6 +6,7 @@ timeframe: 7th grade
 team: myself
 status: not-ongoing
 description: browse math problems, loaded from the Art of Problem Solving wiki
+featured: false
 ---
 {{% slide %}}
 Math Trainer allows users to browse math problems which are loaded from the Art of Problem Solving wiki. Data from the wiki is fetched, and the user selects year, test, and question. I wrote this in seventh grade, mainly for my own personal use.

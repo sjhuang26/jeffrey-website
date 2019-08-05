@@ -5,6 +5,7 @@ code_link: https://github.com/olivierpo/cfs
 timeframe: summer between 9-10th grade
 team: a few people
 status: not-ongoing
+featured: false
 ---
 {{% slide %}}
 CFS was intended to be a room-booking tool for college faculty, but it never got very far. So this was mainly a learning experience.

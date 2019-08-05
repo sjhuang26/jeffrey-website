@@ -1,12 +1,13 @@
 ---
 title: ARC
-description: a tutoring-scheduling app that manages ~120 tutors at my high school
+description: An application that almost completely automates the ARC tutoring program's scheduling and attendance tracking at my high school (~120 tutors). It combines all needed student data into a single spreadsheet, avoiding duplicate contact entries, missing students, and other sync issues which were problematic in the previous system.
 link: https://arc-app-frontend-server.netlify.com/
 code_link: https://github.com/sjhuang26/arc-app-new
 code_link_2: https://github.com/sjhuang26/arc-app-frontend
 timeframe: 10th grade summer
 team: myself
 status: ongoing
+featured: true
 ---
 {{% slide %}}
 ### Background

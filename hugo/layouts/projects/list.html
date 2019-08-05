@@ -1,15 +1,23 @@
 {{ define "main" }}
 	<div class="list-page">
 		<h1 class="title">Projects</h1>
-		<div class="card-list">
-			{{ range .Pages }}
-				<a href="{{ .Permalink }}" class="card card--clickable card-list__card">
-					<div class="card__body">
-						<div class="card__title">{{ .Title }}</div>
-						<p class="card__description">{{ .Description }}</p>
-					</div>
-				</a>
-			{{ end }}
-		</div>
+		<h2>Featured projects</h2>
+	    {{ range (where (where .Site.RegularPages "Type" "projects") "Params.featured" true) }}
+	    	<a href="{{ .Permalink }}" class="card card--clickable card-list__card">
+				<div class="card__body">
+					<div class="card__title">{{ .Title }}</div>
+					<p class="card__description">{{ .Description }}</p>
+				</div>
+			</a>
+	    {{ end }}
+	    <h2>Other projects</h2>
+	    {{ range (where (where .Site.RegularPages "Type" "projects") "Params.featured" false) }}
+	    	<a href="{{ .Permalink }}" class="card card--clickable card-list__card">
+				<div class="card__body">
+					<div class="card__title">{{ .Title }}</div>
+					<p class="card__description">{{ .Description }}</p>
+				</div>
+			</a>
+	    {{ end }}
 	</div>
 {{ end }}
