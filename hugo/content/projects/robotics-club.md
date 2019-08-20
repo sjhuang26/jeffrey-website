@@ -8,9 +8,11 @@ description: programming a robot remote control system for the school's robotics
 featured: false
 ---
 {{% slide %}}
-In Robotics Club, I programmed a relatively advanced robot driving remote control system with a team.
+### Overview
 
-I also cleaned up the code architecture, creating a unified logging system (which we used frequently in debugging issues) and utilities that encapsulate most of the trigonometry and other math involved in driving the robot. While my initial designs were somewhat over-abstracted and inflexible, through iteration and feedback I was eventually able to simplify things.
+**Problem:** My high school's Robotics Club competes in the FIRST Tech Challenge, where each team programs a robot to do specific competition tasks. I joined the programming subgroup of the club, and my focus was on improving the robot driving remote control system. The robot driving functionality must both be usable in the competition and be easy to prototype and experiment with.
+
+**Solution:** I designed a code architecture for the robot driving functionality that made testing and prototyping easier. My initial designs were somewhat over-abstracted and inflexible, but through iteration and feedback I improved effectiveness. I also created a unified logging system that the team frequently used to debug issues.
 
 Most of the robot control code I wrote is still used today, even though I'm no longer in the club.
 {{% /slide %}}

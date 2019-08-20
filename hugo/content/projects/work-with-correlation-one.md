@@ -13,13 +13,17 @@ As of right now, I work as a contractor with Correlation One. My main responsibi
 Early on, I was mentioned once in the [official Correlation One blog](https://medium.com/@CorrelationOne/high-schooler-is-finalist-in-ai-games-night-at-rensselaer-polytechnic-institute-a0d1c6c18d37).
 {{% /slide %}}
 
+
+
 {{% slide %}}
 # Example problem (TODO)
 
 This problem is similar in style to what I would typically write. I wrote it specifically for the purposes of this website. A variety of programming concepts are tested in-depth in situations mimicking real-life software development. Code comprehension and modeling possible outcomes of the code are emphasized.
 {{% /slide %}}
 
+
+
 {{% learnings %}}
 * By looking at others' work, I figured out a set of tactics for writing software engineering questions that test the user's ability in a balanced manner.
-* Overall, writing the questions improved my own code-comprehension skills.
+* Figuring out tactics for how to write test questions was very interesting; I think this is a generally applicable skill.
 {{% /learnings %}}

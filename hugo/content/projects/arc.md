@@ -1,6 +1,6 @@
 ---
-title: ARC
-description: An application that almost completely automates the ARC tutoring program's scheduling and attendance tracking at my high school (~120 tutors). It combines all needed student data into a single spreadsheet, avoiding duplicate contact entries, missing students, and other sync issues which were problematic in the previous system.
+title: Application for the ARC (Academic Resource Center)
+description: An application that essentially automates the data-tracking, scheduling and attendance processes of my high school's tutoring program (200+ students).
 link: https://arc-app-frontend-server.netlify.com/
 code_link: https://github.com/sjhuang26/arc-app-new
 code_link_2: https://github.com/sjhuang26/arc-app-frontend
@@ -10,15 +10,17 @@ status: ongoing
 featured: true
 ---
 {{% slide %}}
-### Background
+### Overview
 
-The ARC is a peer-to-peer tutoring program at my high school.
+**Background of organization:** The ARC (Academic Resource Center) is a peer-to-peer tutoring program at my high school. Upon joining the ARC in tenth grade as "tech director", I started thinking about how to design workflows for managing the data of 200+ students that the ARC handles.
 
-Upon joining the ARC in tenth grade as "tech director", I saw opportunities to automate the work of managing 100+ student tutors. Each tutor needs to be scheduled with a student, and their attendance needs to be tracked. While there was some computerization of these processes, most of this was done by hand using a paperwork system.
+**Problem:** In the ARC, each tutor needs to be scheduled with a student, and their attendance needs to be tracked. Most of this was done by hand using a paperwork system. Although the ARC used third party services to computerize attendance and volunteer-hour tracking, the user interfaces of the services were difficult for the administrators to use. Data duplication was problematic, and since there wasn't a satisfactory overview mode with statistics for each student viewable at once, adminstrators had to hand-check each student's profile one by one. All this greatly slowed down the process, with little automation.
 
-**Application:** a website that automates and manages the ARC's tutor-scheduling and attendance tracking processes.
+**Solution:** I designed an application that essentially automates the ARC's tutor-scheduling and attendance tracking processes.
 
-**Benefits:** the work of managing 100+ tutors that previously required 2-3 student volunteers is for the most part automated. Furthermore, the new application combines all student data into a single spreadsheet, avoiding duplicate contact entries, missing students, and other sync issues which were problematic in the previous system.
+* The work of managing 200+ students that previously required 3-4 student volunteers is for the most part automated.
+* All student data is combined into a single spreadsheet, avoiding duplicate contact entries, missing students, and other sync issues.
+* The user interface has features that optimize the efficiency of the administrators.
 {{% /slide %}}
 
 
